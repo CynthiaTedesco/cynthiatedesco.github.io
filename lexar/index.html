@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="stylesheet/lexar.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<script type="text/javaScript" src="js/lang.js"/></script>
+		<script type="text/javaScript" src="js/lexar.js"/></script>
+		<script> 
+			$(function(){
+			  $("#header").load("header.html", function() {
+			    $('.lang').click( function() {
+
+			        lang = $(this).attr('id'); // obtain language id
+			        // translate all translatable elements
+			        $('.tr').each(function(i){
+			          $(this).text(aLangKeys[lang][ $(this).attr('key') ]);
+			        });
+			    });
+
+			    $("#facebook").click(function(){
+				  	window.open('http://facebook.com', '_blank');
+				});
+
+				$("#twitter").click(function(){
+				  	window.open('http://twitter.com', '_blank');
+				});
+
+				$("#linkedin").click(function(){
+				  	window.open('http://linkedin.com', '_blank');
+				});
+
+				$("#skype").click(function(){
+				  	window.open('http://skype.com', '_blank');
+				});
+
+				$("#main-logo").click(function(){
+				  	$("#content").load("inicio.html", function(){
+				  		$('.tr').each(function(i){
+				          $(this).text(aLangKeys[lang][ $(this).attr('key') ]);
+				        });
+				  	});
+				});
+			  });
+			});
+
+			$(function(){
+			  $("#footer").load("footer.html", function() {
+			  	$("#facebook").click(function(){
+				  	window.open('http://facebook.com', '_blank');
+				});
+
+				$("#twitter").click(function(){
+				  	window.open('http://twitter.com', '_blank');
+				});
+
+				$("#linkedin").click(function(){
+				  	window.open('http://linkedin.com', '_blank');
+				});
+
+				$("#skype").click(function(){
+				  	window.open('http://skype.com', '_blank');
+				});
+			  });
+			});
+
+			$(function(){
+			  $("#menu").load("menu.html", function(){
+
+			  	//setea el menu item activo
+			  	$('ul.nav > li').click(function (e) {
+		            e.preventDefault();
+		            $('ul.nav > li').removeClass('active');
+		            $(this).addClass('active');
+
+		            if($(".navbar-toggle").hasClass("open")){
+						$(".navbar-toggle").attr("src","images/header-ico-menu.png");
+					} else {
+						$(".navbar-toggle").attr("src","images/header-ico-cerrar.png");
+					}
+					
+					$(".navbar-toggle").toggleClass("open");
+		        });
+
+			  	$("#menu-inicio").click(function(){
+				  	$("#content").load("inicio.html", function(){
+				  	});
+				});
+				$("#menu-conocenos").click(function(){
+				  	$("#content").load("conocenos.html", function(){
+				  	});
+				});
+				$("#menu-servicios").click(function(){
+				  	$("#content").load("servicios.html", function(){
+				  	});
+				});
+				$("#menu-especializaciones").click(function(){
+				  	$("#content").load("especializaciones.html", function(){
+				  	});
+				});
+				$("#menu-presupuestos").click(function(){
+				  	$("#content").load("presupuestos.html", function(){
+				  	});
+				});
+				$("#menu-contactanos").click(function(){
+				  	$("#content").load("contactanos.html", function(){
+				  	});
+				});
+				$("#menu-sumate").click(function(){
+				  	$("#content").load("sumate.html", function(){
+				  	});
+				});
+
+				$(".navbar-toggle").click(function(){
+
+					if ($(this).hasClass("open")){
+						$(this).attr("src","images/header-ico-menu.png");
+					} else {
+						$(this).attr("src","images/header-ico-cerrar.png");
+					}
+					
+					$(this).toggleClass("open");
+				});
+
+			  });
+			});
+		</script>
+		<script type="text/javascript">
+			
+			function DropDown(el) {
+				this.dd = el;
+				this.placeholder = this.dd.children('span');
+				this.opts = this.dd.find('ul.dropdown > li');
+				this.val = '';
+				this.index = -1;
+				this.initEvents();
+			}
+			DropDown.prototype = {
+				initEvents : function() {
+					var obj = this;
+
+					obj.dd.on('click', function(event){
+						$(this).toggleClass('active');
+						return false;
+					});
+
+					obj.opts.on('click',function(){
+						var opt = $(this);
+						obj.val = opt.text();
+						obj.index = opt.index();
+						obj.placeholder.text(obj.val);
+					});
+				},
+				getValue : function() {
+					return this.val;
+				},
+				getIndex : function() {
+					return this.index;
+				}
+			}
+
+			$(function() {
+
+				var dd = new DropDown( $('#dd') );
+
+				$(document).click(function() {
+					// all dropdowns
+					$('.wrapper-dropdown-3').removeClass('active');
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<header id="header"></header>
+		<div id="menu"></div>
+		<div id="content" class="container">
+			<h1 key="content" class="regular tr">Contenido</h1>
+		</div>
+		<footer id="footer"></footer>
+	</body>
+</html>

@@ -1,2 +1,0 @@
-cynthiatedesco.github.io
-========================
