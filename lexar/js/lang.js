@@ -14,7 +14,7 @@ aLangKeys['en']['menu-contacto']='CONTACT US';
 aLangKeys['en']['menu-presupuesto']='PRESUPUESTO (TRAD)';
 aLangKeys['en']['css']='CSS';
 aLangKeys['en']['contact_us']='Contact us';
-aLangKeys['en']['welcome']='Welcome guests';
+aLangKeys['en']['contactus-title']='Contact us';
 
 aLangKeys['es']['content']='Contenido';
 aLangKeys['es']['footer']='Pie';
@@ -24,9 +24,9 @@ aLangKeys['es']['menu-esp']='ESPECIALIZACIONES';
 aLangKeys['es']['menu-conocenos']='CONOCENOS';
 aLangKeys['es']['menu-sumate']='SUMATE AL EQUIPO';
 aLangKeys['es']['menu-contacto']='CONTACTANOS';
-aLangKeys['eS']['menu-presupuesto']='PRESUPUESTO';
+aLangKeys['es']['menu-presupuesto']='PRESUPUESTO';
 aLangKeys['es']['contact_us']='Напишите нам';
-aLangKeys['es']['welcome']='Добро пожаловать';
+aLangKeys['es']['contactus-title']='Contactanos!';
 
 
 $(document).ready(function() {
