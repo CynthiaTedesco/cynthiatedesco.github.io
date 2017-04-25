@@ -1,0 +1,26 @@
+body {
+	background: url(../images/dinos1.jpg) no-repeat;
+    background-size: cover;
+}
+
+.main h1{
+	letter-spacing: 0.3em;
+    font-weight: bold;
+    font-size: -webkit-xxx-large;
+}
+
+.main button{
+    border: none;
+    font-size: 1.5em;
+    padding: 0.5em 2em;
+    margin-top: 0.5em;
+    font-variant: small-caps;
+    background: rgba(247, 181, 67, 0.75);	
+}
+
+div.main {
+	position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+}
